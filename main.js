@@ -20,7 +20,7 @@ function uploadimg() {
 	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
 }
 
-//Write a code to grab the key-pressed event
+window.addEventListener("keydown", my_keydown)
 
 function my_keydown(e)
 {
@@ -28,12 +28,41 @@ function my_keydown(e)
 	console.log(keyPressed);
 	
 		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-		//write a code to check the type of key pressed
-	else 
+	{
+		aplhabetkey();
+		document.getElementById("d1").innerHTML="You pressed aplhabet key";
+		console.log("aplhabet key");
+	}
+    else
+	if((keyPressed >=48 && keyPressed<=57))
+	{
+		numberkey();
+		document.getElementById("d1").innerHTML="You pressed number key";
+		console.log("number key");
+	}
+    else
+	if((keyPressed >=37 && keyPressed<=40))
+	{
+		arrowkey();
+		document.getElementById("d1").innerHTML="You pressed arrow key";
+		console.log("arrow key");
+	}
+    else
+	if((keyPressed ==17 || keyPressed==18) || (keyPressed ==27))
+	{
+		specialkey();
+		document.getElementById("d1").innerHTML="You pressed special key";
+		console.log("special key");
+	}
+
+	else
 	{
 		otherkey();
-		document.getElementById("d1").innerHTML="You pressed symbol or other key";
+		document.getElementById("d1").innerHTML="You pressed other key";
+		console.log("other key");
 	}
+
+	
 }
 
 function aplhabetkey()
